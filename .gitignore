@@ -1,0 +1,14 @@
+# published media - user content, never in git (root-anchored)
+/uploads/
+/music_uploads/
+/music_excav_uploads/
+/photo_uploads/
+__pycache__/
+*.bak
+*.bak-*
+*.log
+*.tmp
+# never commit credentials or a filled-in config
+.env
+*.key
+*.pem

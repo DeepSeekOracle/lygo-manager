@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b11">
+<title>LYGO Signal Publish Portal · 1.0.0</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12h3l2-6 4 12 3-9 2 3h6"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 20"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 7 5 5-5 5m7 0h8"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.5-2L20 12M4 12l2.4 5a7 7 0 0 0 11.5-2"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7Z"/></symbol>
+</svg>
+
+<div class="ambient" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="#signal" aria-label="LYGO Publish Command home">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="brand-copy">
+      <span class="eyebrow">LYGO / EXCAVATIONPRO</span>
+      <strong>Publish Command</strong>
+    </span>
+  </a>
+  <div class="top-actions">
+    <span id="health-pill" class="status-pill is-checking"><span class="status-dot"></span><span id="health-label">Checking system</span></span>
+    <button id="lygo-browser-btn" class="top-link button-link" type="button" title="Launch the LYGO Browser - Bookmark Bible, agent + human">
+      <svg class="icon"><use href="#i-list"/></svg> Browser <span id="lygo-browser-state" class="count">off</span>
+    </button>    <a class="top-link" href="https://excavationpro.ca/signal/" target="_blank" rel="noopener">Live hub <svg class="icon"><use href="#i-external"/></svg></a>
+    <button id="activity-btn" class="top-link button-link" type="button" aria-controls="job-dock">
+      <svg class="icon"><use href="#i-terminal"/></svg> Activity <span id="activity-count" class="count">0</span>
+    </button>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow rise">LOCAL PUBLISHING CONSOLE <span class="slash">/</span> 127.0.0.1</p>
+      <h1 class="rise delay-1">Drop it.<br><em>It ships.</em></h1>
+      <p class="lede rise delay-2">Signal episodes, music and Data Vault photography. One queue, three deterministic importers, zero manual page edits.</p>
+      <div class="hero-actions rise delay-3">
+        <a class="btn btn-primary" href="#signal" data-tab-link="signal">Publish something <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <span class="mode-copy"><span class="status-dot"></span>Auto-publish <strong id="mode-label">ON</strong></span>
+      </div>
+    </div>
+    <aside class="system-card rise delay-2" aria-label="System status">
+      <div class="system-head">
+        <span class="eyebrow">SYSTEM CHECK</span>
+        <span id="last-check" class="micro">waiting</span>
+      </div>
+      <div class="system-main">
+        <span class="pulse-ring"><span class="status-dot"></span></span>
+        <div><strong id="health-title">Checking the stack</strong><p id="health-sub">Portal, importers and repositories</p></div>
+      </div>
+      <div class="repo-table">
+        <div><span>Signal</span><code id="repo-signal">—</code></div>
+        <div><span>Music</span><code id="repo-music">—</code></div>
+        <div><span>Photos</span><code id="repo-photo">—</code></div>
+      </div>
+      <a class="text-link" href="#pipeline">Inspect the pipeline <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </aside>
+  </section>
+
+  <section class="metrics" aria-label="Published totals">
+    <a class="metric" href="#signal" data-tab-link="signal">
+      <span class="metric-icon"><svg class="icon"><use href="#i-wave"/></svg></span>
+      <span class="metric-label">Signal</span>
+      <strong id="stat-episodes">—</strong>
+      <small><span id="stat-radio">—</span> radio <span class="dot-sep">·</span> <span id="stat-shows">—</span> total</small>
+    </a>
+    <a class="metric" href="#music" data-tab-link="music">
+      <span class="metric-icon"><svg class="icon"><use href="#i-music"/></svg></span>
+      <span class="metric-label">Music</span>
+      <strong id="stat-music">—</strong>
+      <small>tracks on justinhelmer.ca</small>
+    </a>
+    <a class="metric" href="#photos" data-tab-link="photos">
+      <span class="metric-icon"><svg class="icon"><use href="#i-photo"/></svg></span>
+      <span class="metric-label">Data Vault</span>
+      <strong id="stat-photos">—</strong>
+      <small>gallery items</small>
+    </a>
+    <a class="metric metric-wide" href="#genesis" data-tab-link="genesis">
+      <span class="metric-icon"><svg class="icon"><use href="#i-shield"/></svg></span>
+      <span class="metric-label">Genesis HUD</span>
+      <strong class="metric-word"><span class="live-dot"></span>Live</strong>
+      <small>wallet <span class="dot-sep">·</span> services <span class="dot-sep">·</span> coherence</small>
+    </a>
+  </section>
+
+  <section id="workspace" class="workspace">
+    <div class="workspace-head">
+      <div class="tabs" role="tablist" aria-label="Content type">
+        <button id="tab-command" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-command" data-tab="command"><svg class="icon"><use href="#i-bolt"/></svg>Command <span class="live-dot"></span></button>
+        <button id="tab-agents" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-agents" data-tab="agents"><svg class="icon"><use href="#i-terminal"/></svg>Agents</button>
+        <button id="tab-signal" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-signal" data-tab="signal"><svg class="icon"><use href="#i-wave"/></svg>Signal</button>
+        <button id="tab-music" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-music" data-tab="music"><svg class="icon"><use href="#i-music"/></svg>Music</button>
+        <button id="tab-photos" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-photos" data-tab="photos"><svg class="icon"><use href="#i-photo"/></svg>Photos</button>
+        <button id="tab-genesis" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-genesis" data-tab="genesis"><svg class="icon"><use href="#i-shield"/></svg>Genesis</button>
+      </div>
+      <div class="workspace-state"><span class="status-dot"></span><span id="workspace-state">All intakes ready</span></div>
+    </div>
+
+    <div class="workspace-grid">
+      <div class="work-stack">
+
+        <section id="panel-command" class="work-panel command-panel" data-panel="command" role="tabpanel" aria-labelledby="tab-command">
+          <div class="panel-head command-head">
+            <div>
+              <p class="eyebrow">00 / COMMANDER</p>
+              <h2>Launch the stack.<br><span>Find the output.</span></h2>
+              <p class="panel-desc">Boot the agents, open the systems, jump to every media folder. Allowlisted local actions only — no path typing, no searching.</p>
+            </div>
+            <button id="commander-refresh" class="btn btn-quiet" type="button"><svg class="icon"><use href="#i-refresh"/></svg>Refresh HUD</button>
+          </div>
+
+          <div class="command-summary">
+            <div><span class="summary-label">BOOT TARGETS</span><strong id="cmd-boot-count">—</strong><small>known actions</small></div>
+            <div><span class="summary-label">SERVICES</span><strong id="cmd-service-count">—</strong><small>loopback live</small></div>
+            <div><span class="summary-label">OUTPUT FOLDERS</span><strong id="cmd-folder-count">—</strong><small>one-click paths</small></div>
+            <div><span class="summary-label">MEDIA VAULT</span><strong id="cmd-media-size">—</strong><small>on disk</small></div>
+            <span class="command-scan" aria-hidden="true"></span>
+          </div>
+
+          <section class="command-block">
+            <div class="block-head">
+              <div><p class="eyebrow">LAUNCHPAD</p><h3>Boot the agents.</h3></div>
+              <span class="block-meta" id="cmd-live-note"><span class="live-dot"></span>live probes</span>
+            </div>
+            <div id="boot-grid" class="boot-grid"><p class="empty">Reading boot targets…</p></div>
+          </section>
+
+          <section class="command-block">
+            <div class="block-head">
+              <div><p class="eyebrow">OUTPUTS / MEDIA</p><h3>Open where the work lives.</h3></div>
+              <span class="block-meta">ONE CLICK</span>
+            </div>
+            <div id="folder-grid" class="folder-grid"><p class="empty">Counting folders…</p></div>
+          </section>
+
+          <section class="command-block standalone-strip">
+            <div class="block-head">
+              <div><p class="eyebrow">FORGE / STANDALONE</p><h3>Own window. Own engine.</h3></div>
+              <a class="text-link" href="http://127.0.0.1:8796/" target="_blank" rel="noopener">Open Forge <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+            <p class="standalone-note">Forge is intentionally not embedded in this console. Use the launch card above to boot it; then work in its own dispatcher window.</p>
+          </section>
+          <p id="commander-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-shield"/></svg>Backend allowlist: only these known BATs, shortcuts, URLs and folders can open.</span><span id="cmd-updated">NEVER</span></div>
+        </section>
+
+
+
+        <section id="panel-agents" class="work-panel agents-panel" data-panel="agents" role="tabpanel" aria-labelledby="tab-agents" hidden>
+          <div class="panel-head agents-head">
+            <div>
+              <p class="eyebrow">05 / AGENT MANAGER <span class="version-badge">v1.9.0</span></p>
+              <h2>Manager online.<br><span>Agents linked.</span></h2>
+              <p class="panel-desc"><strong>HERMES</strong> inside the LYGO engine is the Manager brain. The model picker still selects the engine model. A9LYRA and Lightfather stay on the stream PC with real Boot/Restart controls.</p>
+            </div>
+            <button id="agents-refresh" class="btn btn-quiet" type="button"><svg class="icon"><use href="#i-refresh"/></svg>Refresh agents</button>
+          </div>
+
+          <div class="agent-topline">
+            <button id="model-nvidia" class="model-chip selected" type="button"><span class="status-dot"></span><span><b>NVIDIA official</b><small>ultra-550b · primary</small></span></button>
+            <button id="model-qwen" class="model-chip" type="button"><span class="status-dot"></span><span><b>LYGO Engine</b><small>local fallback · 4B</small></span></button>
+            <div class="prediction-strip">
+              <span id="prediction-dot" class="status-dot"></span>
+              <div class="prediction-copy"><strong id="prediction-state">Checking stream PC…</strong><span id="prediction-detail">port 8791 · predictions bot</span></div>
+              <button id="prediction-restart" class="btn btn-quiet" type="button"><svg class="icon"><use href="#i-refresh"/></svg>Restart</button>
+            </div>
+          </div>
+          <p id="prediction-warning" class="stream-warning" hidden></p>
+
+          <section class="manager-console">
+            <header class="agent-window-head">
+              <div class="agent-id"><span class="agent-avatar mg">MG</span><span><strong>LYGO Manager</strong><small>NVIDIA official primary · local engine fallback</small></span></div>
+              <span id="manager-provider" class="agent-provider">ready</span>
+            </header>
+            <div id="manager-messages" class="agent-messages" aria-live="polite">
+              <div class="agent-msg system"><span>Manager console 1.9.0. HERMES runs on the NVIDIA official API and falls back to the local LYGO Engine (Qwen3-4B-Instruct-2507). A9LYRA and Lightfather are linked below.</span></div>
+            </div>
+            <div class="quick-row" data-quick="manager"><button type="button">Audit the stack</button><button type="button">Plan next build</button><button type="button">Write a stream task</button></div>
+            <form class="agent-composer" data-agent-form="manager">
+              <textarea data-agent-input="manager" rows="2" placeholder="Talk to the LYGO Manager…" aria-label="Message the LYGO Manager"></textarea>
+              <button class="btn btn-primary" type="submit"><svg class="icon"><use href="#i-arrow"/></svg>Send</button>
+            </form>
+          </section>
+
+          <div class="agent-grid linked-grid">
+            <article class="agent-window a9-window linked-window">
+              <header class="agent-window-head">
+                <div class="agent-id"><span class="agent-avatar">A9</span><span><strong>A9LYRA</strong><small>stream PC · linked agent</small></span></div>
+                <span id="a9-provider" class="agent-provider">stream link</span>
+              </header>
+              <div id="a9-messages" class="agent-messages" aria-live="polite">
+                <div class="agent-msg system"><span>Direct stream-PC brain. This window talks to the agent process; Boot/Restart controls are real.</span></div>
+              </div>
+              <div class="bot-bar"><span id="a9-bot-state" class="bot-state">checking stream…</span><span class="bot-actions"><button type="button" data-bot-action="boot_a9">Boot</button><button type="button" data-bot-action="restart_a9">Restart</button></span></div>
+              <div class="quick-row" data-quick="a9lyra"><button type="button">Status report</button><button type="button">What is happening on stream?</button><button type="button">Draft a diary note</button></div>
+              <form class="agent-composer" data-agent-form="a9lyra">
+                <textarea data-agent-input="a9lyra" rows="2" placeholder="Talk to A9LYRA on the stream PC…" aria-label="Message A9LYRA"></textarea>
+                <button class="btn btn-primary" type="submit"><svg class="icon"><use href="#i-arrow"/></svg>Send</button>
+              </form>
+            </article>
+
+            <article class="agent-window lf-window linked-window">
+              <header class="agent-window-head">
+                <div class="agent-id"><span class="agent-avatar">LF</span><span><strong>Lightfather</strong><small>stream PC · linked agent</small></span></div>
+                <span id="lf-provider" class="agent-provider">stream link</span>
+              </header>
+              <div id="lf-messages" class="agent-messages" aria-live="polite">
+                <div class="agent-msg system"><span>Direct stream-PC brain. This window talks to the agent process; Boot/Restart controls are real.</span></div>
+              </div>
+              <div class="bot-bar"><span id="lf-bot-state" class="bot-state">checking stream…</span><span class="bot-actions"><button type="button" data-bot-action="boot_lf">Boot</button><button type="button" data-bot-action="restart_lf">Restart</button></span></div>
+              <div class="quick-row" data-quick="lightfather"><button type="button">Status report</button><button type="button">Audit the stream stack</button><button type="button">Draft a task brief</button></div>
+              <form class="agent-composer" data-agent-form="lightfather">
+                <textarea data-agent-input="lightfather" rows="2" placeholder="Talk to Lightfather on the stream PC…" aria-label="Message Lightfather"></textarea>
+                <button class="btn btn-primary" type="submit"><svg class="icon"><use href="#i-arrow"/></svg>Send</button>
+              </form>
+            </article>
+          </div>
+
+          <div class="agent-lower">
+            <section class="agent-task-panel">
+              <div class="block-head"><div><p class="eyebrow">STREAM PC / TASK BUS</p><h3>Send a task across.</h3></div><span class="block-meta">SHARED QUEUE</span></div>
+              <form id="stream-task-form" class="task-form">
+                <input id="stream-task-title" type="text" placeholder="Task title" autocomplete="off">
+                <textarea id="stream-task-body" rows="2" placeholder="What should the stream worker do?" aria-label="Stream task body"></textarea>
+                <button class="btn btn-primary" type="submit" id="stream-task-send"><svg class="icon"><use href="#i-arrow"/></svg>Queue task</button>
+              </form>
+              <p id="stream-task-notice" class="notice" role="status" aria-live="polite"></p>
+            </section>
+            <aside class="standalone-card">
+              <span class="standalone-eyebrow">STANDALONE ENGINE</span>
+              <strong>LYGO Forge</strong>
+              <p>Forge stays in its own window and its own process. This console only boots it or opens the dispatcher.</p>
+              <div class="standalone-actions">
+                <a class="btn btn-quiet" href="http://127.0.0.1:8796/" target="_blank" rel="noopener">Open Forge <svg class="icon"><use href="#i-external"/></svg></a>
+                <span class="standalone-note">not embedded</span>
+              </div>
+            </aside>
+          </div>
+          <p id="agents-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-shield"/></svg>Manager: NVIDIA official primary, local engine fallback. Agents: stream PC linked.</span><span id="agents-updated">NEVER</span></div>
+        </section>
+
+        <section id="panel-signal" class="work-panel" data-panel="signal" role="tabpanel" aria-labelledby="tab-signal">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">01 / SIGNAL EPISODE</p>
+              <h2>One ZIP. A complete episode.</h2>
+              <p class="panel-desc">The bundle is validated, the page and rails are generated, then the commit is pushed to <strong>excavationpro-ca</strong>.</p>
+            </div>
+            <span class="tag">EXCAVATIONPRO.CA</span>
+          </div>
+
+          <div id="signal-drop" class="drop-zone" tabindex="0" role="button" aria-label="Choose or drop an episode zip">
+            <input id="signal-file" type="file" accept=".zip,application/zip" hidden>
+            <div class="drop-visual">
+              <span class="drop-icon"><svg class="icon"><use href="#i-upload"/></svg></span>
+              <span class="scanline" aria-hidden="true"></span>
+            </div>
+            <div class="drop-copy">
+              <strong>Drop the episode ZIP</strong>
+              <span>or <u>choose a file</u> from disk</span>
+            </div>
+            <div class="bundle-parts"><code>ai_radio.mp3</code><code>cover.png</code><code>show_notes.json</code></div>
+            <span class="drop-limit">MAX 120 MB <span class="dot-sep">·</span> ONE JOB AT A TIME</span>
+          </div>
+
+          <div id="signal-selection" class="selection" hidden>
+            <span class="file-icon"><svg class="icon"><use href="#i-wave"/></svg></span>
+            <div class="file-copy"><strong id="signal-name">episode.zip</strong><span id="signal-size">—</span></div>
+            <button class="icon-button" type="button" id="signal-clear" aria-label="Remove selected ZIP"><svg class="icon"><use href="#i-x"/></svg></button>
+            <button class="btn btn-primary" type="button" id="signal-publish">Publish episode <svg class="icon"><use href="#i-arrow"/></svg></button>
+          </div>
+          <p id="signal-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-shield"/></svg>Safe failure: bad ZIP, duplicate slug or a dirty Signal tree stops before push. Unrelated leftover files are auto-saved.</span><span>COMMIT + PUSH <code>main</code></span></div>
+        </section>
+
+        <section id="panel-music" class="work-panel" data-panel="music" role="tabpanel" aria-labelledby="tab-music" hidden>
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">02 / MUSIC INTAKE</p>
+              <h2>Drop songs. Ship the listen page.</h2>
+              <p class="panel-desc">Hash and dedupe, encode to a 160k stream, upload to Hugging Face, rebuild the playlist and push <strong>justinhelmer-ca</strong>.</p>
+            </div>
+            <span class="tag tag-gold">JUSTINHELMER.CA</span>
+          </div>
+
+          <div class="intake-grid">
+            <div id="music-drop" class="drop-zone drop-compact" tabindex="0" role="button" aria-label="Drop songs or choose a folder">
+              <input id="music-files" type="file" accept=".mp3,.wav,.flac,.m4a,audio/*" multiple hidden>
+              <input id="music-folder" type="file" webkitdirectory multiple hidden>
+              <div class="drop-visual"><span class="drop-icon"><svg class="icon"><use href="#i-music"/></svg></span><span class="scanline" aria-hidden="true"></span></div>
+              <div class="drop-copy"><strong>Drop songs or an album folder</strong><span>MP3 · WAV · FLAC · M4A</span></div>
+              <div class="drop-actions">
+                <button class="btn btn-quiet" type="button" id="music-choose-files"><svg class="icon"><use href="#i-music"/></svg>Choose songs</button>
+                <button class="btn btn-quiet" type="button" id="music-choose-folder"><svg class="icon"><use href="#i-folder"/></svg>Folder</button>
+              </div>
+            </div>
+            <div class="intake-options">
+              <label class="field"><span>Album override <i>optional</i></span><input id="music-album" type="text" placeholder="Use tags / parent folder" autocomplete="off"></label>
+              <div class="batch-summary" id="music-summary">
+                <span class="batch-label">BATCH</span>
+                <strong id="music-count">No songs selected</strong>
+                <span id="music-total">Drop files to begin</span>
+              </div>
+              <button id="music-clear" class="btn btn-quiet btn-full" type="button" hidden><svg class="icon"><use href="#i-x"/></svg>Clear batch</button>
+              <button id="music-publish" class="btn btn-primary btn-full" type="button" disabled>Upload &amp; publish music <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+
+          <div id="music-selection" class="file-strip" hidden></div>
+          <p id="music-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-shield"/></svg>External streams first. A dirty repo or failed upload stops before publish.</span><span>HF + GIT</span></div>
+        </section>
+
+        <section id="panel-music-excav" class="work-panel" data-panel="music" role="tabpanel" aria-labelledby="tab-music" hidden>
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">02B / EXCAVATIONPRO MUSIC</p>
+              <h2>Drop songs. Ship the ExcavationPro catalog.</h2>
+              <p class="panel-desc">Same hash, encode, HF stream and playlist pipeline, targeting <strong>domain_signal_work/music.html</strong> and its <strong>listen-data.js</strong> boot catalog.</p>
+            </div>
+            <span class="tag tag-gold">EXCAVATIONPRO.CA</span>
+          </div>
+
+          <div class="intake-grid">
+            <div id="music-excav-drop" class="drop-zone drop-compact" tabindex="0" role="button" aria-label="Drop songs or choose a folder for ExcavationPro">
+              <input id="music-excav-files" type="file" accept=".mp3,.wav,.flac,.m4a,audio/*" multiple hidden>
+              <input id="music-excav-folder" type="file" webkitdirectory multiple hidden>
+              <div class="drop-visual"><span class="drop-icon"><svg class="icon"><use href="#i-music"/></svg></span><span class="scanline" aria-hidden="true"></span></div>
+              <div class="drop-copy"><strong>Drop songs or an album folder</strong><span>MP3 · WAV · FLAC · M4A</span></div>
+              <div class="drop-actions">
+                <button class="btn btn-quiet" type="button" id="music-excav-choose-files"><svg class="icon"><use href="#i-music"/></svg>Choose songs</button>
+                <button class="btn btn-quiet" type="button" id="music-excav-choose-folder"><svg class="icon"><use href="#i-folder"/></svg>Folder</button>
+              </div>
+            </div>
+            <div class="intake-options">
+              <label class="field"><span>Album override <i>optional</i></span><input id="music-excav-album" type="text" placeholder="Use tags / parent folder" autocomplete="off"></label>
+              <div class="batch-summary" id="music-excav-summary">
+                <span class="batch-label">BATCH</span>
+                <strong id="music-excav-count">No songs selected</strong>
+                <span id="music-excav-total">Drop files to begin</span>
+              </div>
+              <button id="music-excav-clear" class="btn btn-quiet btn-full" type="button" hidden><svg class="icon"><use href="#i-x"/></svg>Clear batch</button>
+              <button id="music-excav-publish" class="btn btn-primary btn-full" type="button" disabled>Upload &amp; publish to ExcavationPro <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+
+          <div id="music-excav-selection" class="file-strip" hidden></div>
+          <p id="music-excav-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-shield"/></svg>External streams first. A dirty repo or failed upload stops before publish.</span><span>HF + GIT</span></div>
+        </section>
+
+        <section id="panel-photos" class="work-panel" data-panel="photos" role="tabpanel" aria-labelledby="tab-photos" hidden>
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">03 / DATA VAULT</p>
+              <h2>Drop photos. Build the gallery.</h2>
+              <p class="panel-desc">EXIF-corrected 1600px fulls and 480px square thumbs, a fresh manifest and cache-bust, then <strong>excavationpro-ca</strong>.</p>
+            </div>
+            <span class="tag">DATA VAULT</span>
+          </div>
+
+          <div class="intake-grid">
+            <div id="photo-drop" class="drop-zone drop-compact" tabindex="0" role="button" aria-label="Drop photos or choose a folder">
+              <input id="photo-files" type="file" accept="image/*" multiple hidden>
+              <input id="photo-folder" type="file" webkitdirectory multiple hidden>
+              <div class="drop-visual"><span class="drop-icon"><svg class="icon"><use href="#i-photo"/></svg></span><span class="scanline" aria-hidden="true"></span></div>
+              <div class="drop-copy"><strong>Drop a photo or a whole set</strong><span>JPG · PNG · WEBP · GIF · TIFF</span></div>
+              <div class="drop-actions">
+                <button class="btn btn-quiet" type="button" id="photo-choose-files"><svg class="icon"><use href="#i-photo"/></svg>Choose photos</button>
+                <button class="btn btn-quiet" type="button" id="photo-choose-folder"><svg class="icon"><use href="#i-folder"/></svg>Folder</button>
+              </div>
+            </div>
+            <div class="intake-options">
+              <label class="field"><span>Title override <i>single photo only</i></span><input id="photo-title" type="text" placeholder="Optional title" autocomplete="off"></label>
+              <label class="field"><span>Tags</span><input id="photo-tags" type="text" value="PHOTO" autocomplete="off"></label>
+              <div class="batch-summary" id="photo-summary">
+                <span class="batch-label">BATCH</span>
+                <strong id="photo-count">No photos selected</strong>
+                <span id="photo-total">Drop files to begin</span>
+              </div>
+              <button id="photo-clear" class="btn btn-quiet btn-full" type="button" hidden><svg class="icon"><use href="#i-x"/></svg>Clear batch</button>
+              <button id="photo-publish" class="btn btn-primary btn-full" type="button" disabled>Upload &amp; publish photos <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+
+          <div id="photo-previews" class="photo-previews" hidden></div>
+          <p id="photo-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-shield"/></svg>Originals stay local. Fulls, thumbs and the manifest are published.</span><span>GALLERY + GIT</span></div>
+        </section>
+
+        <section id="panel-genesis" class="work-panel genesis-panel" data-panel="genesis" role="tabpanel" aria-labelledby="tab-genesis" hidden>
+          <div class="panel-head genesis-head">
+            <div>
+              <p class="eyebrow">04 / GENESIS HUD</p>
+              <h2>Lightfather oversight, live.</h2>
+              <p class="panel-desc">The old Genesis panels, wired to current state: Base wallet, Clawnch, local services, machine health, token registry and the coherence audit.</p>
+            </div>
+            <button id="genesis-refresh" class="btn btn-quiet" type="button"><svg class="icon"><use href="#i-refresh"/></svg>Refresh HUD</button>
+          </div>
+
+          <div class="genesis-grid">
+            <article class="genesis-card wallet-card">
+              <div class="genesis-card-head"><span class="card-kicker">BASE / WALLET</span><span class="chain-badge">BASE</span></div>
+              <div class="wallet-balance"><strong id="gen-balance">—</strong><span>ETH</span></div>
+              <div class="wallet-meta"><span>NETWORK GAS <b id="gen-gas">—</b> GWEI</span><span id="gen-wallet-state">checking RPC</span></div>
+              <code id="gen-address" class="wallet-address">—</code>
+              <a id="gen-basescan" class="card-link" href="https://basescan.org/" target="_blank" rel="noopener">Open BaseScan <svg class="icon"><use href="#i-external"/></svg></a>
+            </article>
+
+            <article class="genesis-card">
+              <div class="genesis-card-head"><span class="card-kicker">CLAWNCH</span><span id="gen-clawnch-pill" class="mini-status">—</span></div>
+              <div class="genesis-line"><span>MCP server</span><strong id="gen-clawnch">—</strong></div>
+              <div class="genesis-line"><span>Process ID</span><strong id="gen-pid">—</strong></div>
+              <div class="genesis-line"><span>Token registry</span><strong id="gen-token">—</strong></div>
+              <p id="gen-clawnch-detail" class="card-note">Reading process state…</p>
+            </article>
+
+            <article class="genesis-card services-card">
+              <div class="genesis-card-head"><span class="card-kicker">LOCAL SERVICES</span><span id="gen-service-count" class="micro">—</span></div>
+              <div id="gen-services" class="service-list"><p class="empty">Probing loopback…</p></div>
+            </article>
+
+            <article class="genesis-card system-card">
+              <div class="genesis-card-head"><span class="card-kicker">MACHINE</span><span id="gen-host" class="micro">—</span></div>
+              <div class="genesis-line"><span>Uptime</span><strong id="gen-uptime">—</strong></div>
+              <div class="genesis-line"><span>CPU</span><strong id="gen-cpu">—</strong></div>
+              <div class="genesis-line"><span>Memory</span><strong id="gen-memory">—</strong></div>
+              <div class="genesis-line"><span>System disk</span><strong id="gen-disk">—</strong></div>
+            </article>
+
+            <article class="genesis-card coherence-card">
+              <div class="genesis-card-head"><span class="card-kicker">COHERENCE</span><span id="gen-audit-status" class="mini-status">—</span></div>
+              <div class="audit-mark"><span class="audit-ring"></span><strong id="gen-audit-label">Waiting for report</strong></div>
+              <p id="gen-audit-meta" class="card-note">Reading Audit_Report.json…</p>
+            </article>
+
+            <article class="genesis-card registry-card">
+              <div class="genesis-card-head"><span class="card-kicker">TOKEN REGISTRY</span><span class="micro">STARCORE</span></div>
+              <div class="genesis-line"><span>Symbol</span><strong id="gen-token-symbol">—</strong></div>
+              <div class="genesis-line"><span>Status</span><strong id="gen-token-status">—</strong></div>
+              <div class="genesis-line"><span>Launched</span><strong id="gen-token-launched">—</strong></div>
+              <code id="gen-token-contract" class="contract-line">—</code>
+            </article>
+          </div>
+          <p id="genesis-notice" class="notice" role="status" aria-live="polite"></p>
+          <div class="panel-foot"><span><svg class="icon"><use href="#i-bolt"/></svg>Live HUD refreshes every 15 seconds while the queue runs.</span><span id="gen-updated">NEVER</span></div>
+        </section>
+
+        <section id="pipeline" class="pipeline">
+          <div class="pipeline-head">
+            <div><p class="eyebrow">THE PIPELINE</p><h3>No review screen. Four hard gates.</h3></div>
+            <span class="tag">DETERMINISTIC</span>
+          </div>
+          <div class="pipeline-steps">
+            <div class="pipeline-step"><span class="step-num">01</span><strong>Validate</strong><p>Named files, allowed types, size and repo state.</p><span class="step-mark"><svg class="icon"><use href="#i-check"/></svg></span></div>
+            <div class="pipeline-step"><span class="step-num">02</span><strong>Generate</strong><p>Pages, chapters, rails, feed, sitemap or gallery data.</p><span class="step-mark"><svg class="icon"><use href="#i-check"/></svg></span></div>
+            <div class="pipeline-step"><span class="step-num">03</span><strong>Publish</strong><p>Commit and push only after the external object exists.</p><span class="step-mark"><svg class="icon"><use href="#i-check"/></svg></span></div>
+            <div class="pipeline-step"><span class="step-num">04</span><strong>Verify</strong><p>Live URL, cache-buster and current counts.</p><span class="step-mark"><svg class="icon"><use href="#i-check"/></svg></span></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="rail">
+        <section class="rail-card jobs-card">
+          <div class="rail-head">
+            <div><p class="eyebrow">QUEUE</p><h3>Recent jobs</h3></div>
+            <button id="clear-jobs" class="text-button" type="button">Clear done</button>
+          </div>
+          <div id="jobs-list" class="jobs-list"><p class="empty">Loading activity…</p></div>
+        </section>
+
+        <section class="rail-card episodes-card">
+          <div class="rail-head">
+            <div><p class="eyebrow">FRESH IN THE FEED</p><h3>Latest Signal</h3></div>
+            <a class="text-link" href="https://excavationpro.ca/signal/" target="_blank" rel="noopener">Hub <svg class="icon"><use href="#i-external"/></svg></a>
+          </div>
+          <div id="latest-episodes" class="latest-list"><p class="empty">Loading episodes…</p></div>
+        </section>
+
+        <section class="rail-card note-card">
+          <span class="note-icon"><svg class="icon"><use href="#i-bolt"/></svg></span>
+          <div><strong>Localhost only</strong><p>This console binds to 127.0.0.1. No auth is exposed to the network.</p></div>
+        </section>
+      </aside>
+    </div>
+  </section>
+
+  <section id="job-dock" class="job-dock" hidden aria-live="polite">
+    <div class="job-head">
+      <div class="job-title-wrap">
+        <span class="job-kind" id="job-kind">ACTIVE JOB</span>
+        <h3 id="job-title">Working…</h3>
+      </div>
+      <div class="job-controls">
+        <span id="job-status" class="job-status queued">QUEUED</span>
+        <button id="copy-log" class="icon-button" type="button" aria-label="Copy job log"><svg class="icon"><use href="#i-copy"/></svg></button>
+        <button id="close-job" class="icon-button" type="button" aria-label="Close job panel"><svg class="icon"><use href="#i-x"/></svg></button>
+      </div>
+    </div>
+    <div class="job-progress"><span id="job-progress"></span></div>
+    <div class="job-meta"><span id="job-time"><svg class="icon"><use href="#i-clock"/></svg>—</span><span id="job-repo">—</span><a id="job-link" hidden target="_blank" rel="noopener">Open live result <svg class="icon"><use href="#i-external"/></svg></a></div>
+    <pre id="job-log" class="job-log" tabindex="0"></pre>
+  </section>
+</main>
+
+<footer class="footer">
+  <span><strong>LYGO Publish Command</strong> <span class="dot-sep">/</span> Signal + Music + Data Vault</span>
+  <span class="footer-right"><span class="status-dot"></span>Local queue <span class="dot-sep">/</span> <span id="footer-state">READY</span></span>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+/* LYGO Browser launch + live bridge status. Additive: touches nothing in app.js. */
+(function () {
+  'use strict';
+  var BASE = 'http://127.0.0.1:9337';
+  var btn = document.getElementById('lygo-browser-btn');
+  var chip = document.getElementById('lygo-browser-state');
+  function paint(text, color) { if (!chip) return; chip.textContent = text; chip.style.color = color; }
+  function probe() {
+    fetch(BASE + '/api/health', { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (h) { paint(String(h.recordCount || 0), '#82f0b0'); })
+      .catch(function () { paint('off', ''); });
+  }
+  function launch() {
+    paint('...', '#ffb454');
+    var f = document.createElement('iframe');
+    f.style.cssText = 'position:absolute;width:0;height:0;border:0;visibility:hidden';
+    f.src = 'lygo://browser';
+    document.body.appendChild(f);
+    setTimeout(function () { f.remove(); }, 4000);
+    setTimeout(probe, 2500); setTimeout(probe, 6000); setTimeout(probe, 12000);
+  }
+  if (btn) btn.addEventListener('click', launch);
+  probe();
+  setInterval(probe, 30000);
+})();
+</script><script src="/app.js"></script>
+</body>
+</html>
+
